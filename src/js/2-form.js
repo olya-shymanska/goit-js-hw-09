@@ -12,6 +12,10 @@ const fillForm = () => {
         };
         const formDataFromLs = JSON.parse(localStorage.getItem("feedback-form-state"));
 
+        if (formDataFromLs === null || formDataFromLs === undefined) {
+            return;
+        };
+            
         formData = formDataFromLs;
 
         for (const key in formDataFromLs) {
